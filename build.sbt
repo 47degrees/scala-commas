@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
-lazy val commas = (project in file("."))
-  .settings(
-    name            := "commas"
-  )
-  .settings(libraryDependencies ++= Seq(
-    "org.typelevel" %% "cats"                % "0.4.1"
-  ))
+
+val commas = (project in file("."))
+
+name               := "commas"
+
+scalaVersion       := "2.11.7"
+
+libraryDependencies <++= scalaVersion(scalaVersion => Seq(
+  "org.scala-lang" % "scala-compiler" % scalaVersion
+))
+
+scalacOptions in console in Compile += "-Xplugin:" + (packageBin in Compile).value
+scalacOptions in Test += "-Xplugin:" + (packageBin in Compile).value
