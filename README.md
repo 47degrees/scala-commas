@@ -6,8 +6,8 @@ A Scala compiler plugin that adds support for trailing commas.
 
 Currently only a snapshot is available.
 
-    resolvers := Opts.resolver.sonatypeSnapshots
-    libraryDependencies += "fail.sauce" %% "commas" % "0.1.1-SNAPSHOT"
+    resolvers += Opts.resolver.sonatypeSnapshots
+    addCompilerPlugin("fail.sauce" %% "commas" % "0.1.1-SNAPSHOT")
 
 Now you can leave trailing commas in your import selectors and
 argument lists.
