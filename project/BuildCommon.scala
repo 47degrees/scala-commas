@@ -19,13 +19,11 @@ object BuildCommon extends AutoPlugin {
   override def projectSettings =
     baseSettings ++
     formatSettings ++
-    enhancingScalaSettings ++
     miscSettings
-    AutomateHeaderPlugin.projectSettings // also holding off on this!
+    AutomateHeaderPlugin.projectSettings
 
   private[this] def baseSettings = Seq(
     organization    := "fail.sauce",
-    version         := "0.0.1",
     scalacOptions   ++= Seq(
       "-deprecation", "-feature", "-unchecked", "-encoding", "utf8"),
     scalacOptions   ++= Seq(
@@ -41,19 +39,6 @@ object BuildCommon extends AutoPlugin {
            |
            |""".stripMargin)
     )}
-  )
-
-  private[this] def enhancingScalaSettings = Seq(
-    resolvers += Resolver.sonatypeRepo("releases"),
-    libraryDependencies ++= Seq(
-      // kind projector
-      compilerPlugin(
-        "org.spire-math" %% "kind-projector" % "0.7.1"),
-      // simulacrum
-      compilerPlugin(
-        "org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full),
-      "com.github.mpilquist" %% "simulacrum" % "0.7.0"
-    )
   )
 
   private[this] def formatSettings = SbtScalariform.scalariformSettings ++ Seq(

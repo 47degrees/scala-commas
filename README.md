@@ -4,7 +4,24 @@ A Scala compiler plugin that adds support for trailing commas.
 
 ### Usage
 
-_coming soon_
+Currently only a snapshot is available.
+
+    resolvers := Opts.resolver.sonatypeSnapshots
+    libraryDependencies += "fail.sauce" %% "commas" % "0.1.1-SNAPSHOT"
+
+Now you can leave trailing commas in your import selectors and
+argument lists.
+
+``` scala
+
+import scala.collection.immutable.{ Seq, Set, List, }
+
+val foo = List(
+  "A",
+  "B",
+  "C",
+)
+```
 
 ### Why?
 
@@ -20,4 +37,3 @@ Paul Phillips' [fork of Scala][policy] provided the basis for
 the parser changes.
 
 [policy]: https://github.com/paulp/policy/commit/ead099046c6d2ad2544e494d6cfd091ff7fa33ec
-

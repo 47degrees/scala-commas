@@ -18,8 +18,10 @@
 val commas = (project in file("."))
 
 name               := "commas"
-
 scalaVersion       := "2.11.7"
+
+homepage           :=
+  Some(url("https://github.com/andyscott/scala-commas"))
 
 libraryDependencies <++= scalaVersion(scalaVersion => Seq(
   "org.scala-lang" % "scala-compiler" % scalaVersion
@@ -27,3 +29,24 @@ libraryDependencies <++= scalaVersion(scalaVersion => Seq(
 
 scalacOptions in console in Compile += "-Xplugin:" + (packageBin in Compile).value
 scalacOptions in Test += "-Xplugin:" + (packageBin in Compile).value
+
+
+publishMavenStyle       := true
+publishArtifact in Test := false
+pomIncludeRepository    := Function.const(false)
+
+publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging)
+
+pomExtra := (
+  <scm>
+    <url>git@github.com:andyscott/scala-commas.git</url>
+    <connection>scm:git:git@github.com:andyscott/scala-commas.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>andyscott</id>
+      <name>Andy Scott</name>
+      <url>http://github.com/andyscott/</url>
+    </developer>
+  </developers>
+)
