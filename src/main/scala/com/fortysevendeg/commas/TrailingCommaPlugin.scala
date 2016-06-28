@@ -2,7 +2,7 @@
  * commas, Copyright 2016 Andy Scott
  */
 
-package fail.sauce.commas
+package com.fortysevendeg.commas
 
 import scala.tools.nsc.{ Global ⇒ NscGlobal, SubComponent, Phase }
 import scala.tools.nsc.plugins.{ Plugin ⇒ NscPlugin }
@@ -29,7 +29,7 @@ class TrailingCommaPlugin(val global: NscGlobal)
 }
 
 /** Our customized syntax analyzer phase */
-private[sauce] class TrailingCommaSyntaxAnalyzer(val global: NscGlobal)
+private[commas] class TrailingCommaSyntaxAnalyzer(val global: NscGlobal)
     extends NscSyntaxAnalyzer {
 
   override val runsAfter = List[String]()
@@ -119,7 +119,7 @@ private[sauce] class TrailingCommaSyntaxAnalyzer(val global: NscGlobal)
 }
 
 /** Hijacking helper for compiler phases. */
-private[sauce] sealed trait PhaseJacking { self: NscPlugin ⇒
+private[commas] sealed trait PhaseJacking { self: NscPlugin ⇒
 
   /** Hijack a field from global */
   protected[this] final def hijackField[T](name: String, newValue: T): T = {

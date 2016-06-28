@@ -1,4 +1,4 @@
 <plugin>
   <name>trailing-commas</name>
-  <classname>fail.sauce.commas.TrailingCommaPlugin</classname>
+  <classname>com.fortysevendeg.commas.TrailingCommaPlugin</classname>
 </plugin>

@@ -18,10 +18,10 @@
 val commas = (project in file("."))
 
 name               := "commas"
-scalaVersion       := "2.11.7"
+oscalaVersion       := "2.11.7"
 
 homepage           :=
-  Some(url("https://github.com/andyscott/scala-commas"))
+  Some(url("https://github.com/47deg/scala-commas"))
 
 libraryDependencies <++= scalaVersion(scalaVersion => Seq(
   "org.scala-lang" % "scala-compiler" % scalaVersion
@@ -39,8 +39,8 @@ publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opt
 
 pomExtra := (
   <scm>
-    <url>git@github.com:andyscott/scala-commas.git</url>
-    <connection>scm:git:git@github.com:andyscott/scala-commas.git</connection>
+    <url>git@github.com:47deg/scala-commas.git</url>
+    <connection>scm:git:git@github.com:47deg/scala-commas.git</connection>
   </scm>
   <developers>
     <developer>
