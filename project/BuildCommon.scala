@@ -23,7 +23,7 @@ object BuildCommon extends AutoPlugin {
     AutomateHeaderPlugin.projectSettings
 
   private[this] def baseSettings = Seq(
-    organization    := "fail.sauce",
+    organization    := "com.fortysevendeg",
     scalacOptions   ++= Seq(
       "-deprecation", "-feature", "-unchecked", "-encoding", "utf8"),
     scalacOptions   ++= Seq(
@@ -34,7 +34,7 @@ object BuildCommon extends AutoPlugin {
       "scala" -> (
         HeaderPattern.cStyleBlockComment,
        s"""|/*
-           | * $name, Copyright 2016 Andy Scott
+           | * $name, Copyright 2016 47 Degrees and Andy Scott
            | */
            |
            |""".stripMargin)

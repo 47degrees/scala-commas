@@ -37,3 +37,9 @@ Paul Phillips' [fork of Scala][policy] provided the basis for
 the parser changes.
 
 [policy]: https://github.com/paulp/policy/commit/ead099046c6d2ad2544e494d6cfd091ff7fa33ec
+
+### License
+
+See [COPYING](COPYING) and also:
+- [Scalac's license](misc/LICENSE-scalac.md) for "overridden" code from the Scala compiler
+- [Paul's policy license](misc/LICENSE-paulp) for the original adjustment to the Scala parser
